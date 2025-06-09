@@ -1,4 +1,4 @@
-# Browser Vision API Documentation
+# NOT OFFICIAL Browser Vision API Documentation
 
 This repository contains structured documentation for the [Browser Vision](https://browser.vision) API, designed for automating and managing browser profiles via HTTP API and DevTools Protocol.
 

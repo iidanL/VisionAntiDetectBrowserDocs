@@ -14,6 +14,18 @@ GET https://api.browser.vision/api/profiles/{profile_id}
 X-Token: your_token_here
 ```
 
+## Python Example
+
+```python
+import requests
+
+profile_id = "your_profile_id"
+url = f"https://api.browser.vision/api/profiles/{profile_id}"
+headers = {"X-Token": "your_token_here"}
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
 ## Response Example
 
 ```json

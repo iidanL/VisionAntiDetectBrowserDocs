@@ -12,15 +12,28 @@ The primary token for authorizing requests. You can generate this token from the
 
 Used when team collaboration mode is enabled. This token grants access to shared resources within the team environment.
 
-## Example Header
+## Example Headers
 
-```http
+```
 X-Token: your_token_here
 X-Team-Token: your_team_token_here  # only when required
 ```
 
+## Python Example: Using Auth Headers
+
+```python
+import requests
+
+headers = {
+    "X-Token": "your_token_here",
+    "X-Team-Token": "your_team_token_here"  # optional
+}
+response = requests.get("https://api.browser.vision/api/folders", headers=headers)
+print(response.json())
+```
+
 ## Usage
 
-Tokens should be included with every API call, regardless of the endpoint. Unauthorized requests will be rejected with an HTTP 401 error.
+Tokens must be included with every API call, regardless of the endpoint. Unauthorized requests will be rejected with an HTTP 401 error.
 
-> Note: Keep your tokens secure and do not share them publicly.
+> ⚠️ Keep your tokens secure. Do not expose them in public code repositories.

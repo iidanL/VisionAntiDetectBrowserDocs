@@ -25,23 +25,13 @@ Content-Type: application/json
 }
 ```
 
-You may also specify a remote debugging port:
-
-```json
-{
-  "args": ["--remote-debugging-port=9222"]
-}
-```
-
 ## Stop a Profile
-
-You can stop a running profile with:
 
 ```
 GET http://127.0.0.1:3030/stop/{folderId}/{profileId}
 ```
 
-Or using a POST request without a body.
+Or use a POST request without a body.
 
 ## List Running Profiles
 
@@ -49,7 +39,17 @@ Or using a POST request without a body.
 GET http://127.0.0.1:3030/list
 ```
 
-**Response example:**
+## Python Example: List Running Profiles
+
+```python
+import requests
+
+headers = {"X-Token": "your_token_here"}
+response = requests.get("http://127.0.0.1:3030/list", headers=headers)
+print(response.json())
+```
+
+## Response Example
 
 ```json
 {
@@ -63,10 +63,4 @@ GET http://127.0.0.1:3030/list
 }
 ```
 
-## Authentication
-
-All requests require the `X-Token` header:
-
-```http
-X-Token: your_token_here
-```
+> ℹ️ Profiles must be started with a remote debugging port to enable automation tools like Playwright.

@@ -1,6 +1,6 @@
 # Export Cookies
 
-Export cookies stored in a profile.
+Export all cookies from a specific browser profile.
 
 ## Endpoint
 
@@ -12,6 +12,19 @@ GET https://api.browser.vision/api/profiles/{profile_id}/cookies/export
 
 ```
 X-Token: your_token_here
+```
+
+## Python Example
+
+```python
+import requests
+
+profile_id = "your_profile_id"
+url = f"https://api.browser.vision/api/profiles/{profile_id}/cookies/export"
+headers = {"X-Token": "your_token_here"}
+response = requests.get(url, headers=headers)
+cookies = response.json()
+print(cookies)
 ```
 
 ## Response Example
@@ -31,3 +44,5 @@ X-Token: your_token_here
   ]
 }
 ```
+
+> ℹ️ Exported cookies can be reused for login restoration or state replication across sessions.

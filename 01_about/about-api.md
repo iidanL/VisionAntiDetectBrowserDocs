@@ -1,4 +1,4 @@
-# About the API
+# About the API (Updated)
 
 The Browser Vision API allows developers to automate both internal operations (such as profile, folder, and proxy management) and external browser behavior using DevTools Protocols like Puppeteer and Playwright.
 
@@ -28,3 +28,13 @@ Use HTTP requests (GET, POST, PATCH, DELETE) with the required headers to manage
 ### 2. Profile-Level Automation
 
 Use tools like Puppeteer, Playwright, or Selenium to connect to running browser profiles via DevTools Protocol. These profiles must be launched using the start API beforehand.
+
+## Python Example: Fetch Folders
+
+```python
+import requests
+
+headers = {"X-Token": "your_token_here"}
+response = requests.get("https://api.browser.vision/api/folders", headers=headers)
+print(response.json())
+```

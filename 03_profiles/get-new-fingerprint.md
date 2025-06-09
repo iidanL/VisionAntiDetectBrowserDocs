@@ -1,6 +1,6 @@
 # Get New Fingerprint
 
-Generate a new fingerprint configuration for a profile.
+Generate a new fingerprint configuration to use when creating or updating a profile.
 
 ## Endpoint
 
@@ -14,16 +14,27 @@ GET https://api.browser.vision/api/profiles/fingerprint
 X-Token: your_token_here
 ```
 
+## Python Example
+
+```python
+import requests
+
+headers = {"X-Token": "your_token_here"}
+response = requests.get("https://api.browser.vision/api/profiles/fingerprint", headers=headers)
+print(response.json())
+```
+
 ## Response Example
 
 ```json
 {
   "fingerprint": {
-    "userAgent": "...",
-    "platform": "...",
-    "language": "...",
-    "timezone": "...",
-    ...
+    "userAgent": "Mozilla/5.0...",
+    "platform": "Win32",
+    "language": "en-US",
+    "timezone": "America/New_York"
   }
 }
 ```
+
+> ℹ️ Use this fingerprint when creating or modifying a browser profile.

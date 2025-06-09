@@ -14,6 +14,18 @@ GET https://api.browser.vision/api/folders/{folder_id}/profiles
 X-Token: your_token_here
 ```
 
+## Python Example
+
+```python
+import requests
+
+folder_id = "your_folder_id"
+url = f"https://api.browser.vision/api/folders/{folder_id}/profiles"
+headers = {"X-Token": "your_token_here"}
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
 ## Response Example
 
 ```json
